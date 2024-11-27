@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Municipio - Quintana Roo</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/scripts.js" defer></script>
+</head>
+<body>
+    <div class="navbar" id="navbar-container">
+        <!-- Aquí puedes agregar enlaces de navegación si los necesitas -->
+    </div>
+    <h1>Seleccione un Municipio de Quintana Roo
+        para ver sus grupos de whatsapp
+    </h1>
+
+    <div class="municipio-container">
+        <button class="municipio-button" onclick="selectMunicipio('Othón P. Blanco (Chetumal)')">Othón P. Blanco</button>
+        <button class="municipio-button" onclick="selectMunicipio('Felipe Carrillo Puerto')">Felipe Carrillo Puerto</button>
+        <button class="municipio-button" onclick="selectMunicipio('Bacalar')">Bacalar</button>
+        <button class="municipio-button" onclick="selectMunicipio('Benito Juárez (Cancún)')">Benito Juárez (Cancún)</button>
+        <button class="municipio-button" onclick="selectMunicipio('Isla Mujeres')">Isla Mujeres</button>
+        <button class="municipio-button" onclick="selectMunicipio('Puerto Morelos')">Puerto Morelos</button>
+        <button class="municipio-button" onclick="selectMunicipio('Solidaridad (Playa del Carmen)')">Solidaridad</button>
+        <button class="municipio-button" onclick="selectMunicipio('Tulum')">Tulum</button>
+        <button class="municipio-button" onclick="selectMunicipio('Lázaro Cárdenas')">Lázaro Cárdenas</button>
+        <button class="municipio-button" onclick="selectMunicipio('Cozumel')">Cozumel</button>
+        <button class="municipio-button" onclick="selectMunicipio('José María Morelos')">José María Morelos</button>
+    </div>
+
+    <div id="spinner" style="display: none;">
+        <img src="../js/gifs/Spinner-21.gif" alt="Cargando...">
+    </div>
+
+    <div id="group-list"></div>
+
+    <script>
+        function selectMunicipio(municipio) {
+            // Mostrar el spinner
+            document.getElementById('spinner').style.display = 'block';
+            document.getElementById('group-list').innerHTML = ''; 
+
+            // Hacer una llamada AJAX
+            fetch(`quintanaroo.php?municipio=${encodeURIComponent(municipio)}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('group-list').innerHTML = data;
+                })
+                .finally(() => {
+                    // Ocultar el spinner
+                    document.getElementById('spinner').style.display = 'none';
+                });
+        }
+    </script>
+
+</body>
+</html>
