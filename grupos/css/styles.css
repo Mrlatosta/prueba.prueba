@@ -1,0 +1,192 @@
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #2b5876, #4e4376); /* Degradado azul/morado */
+    color: white;
+    text-align: center;
+    padding-top: 80px; /* Espacio para el navbar */
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+
+        /* Estilos del navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .navbar a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 20px 30px;
+            text-decoration: none;
+            font-size: 20px;
+            transition: background-color 0.3s, font-size 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #4CAF50;
+            font-size: 22px;
+        }
+/* Estilos del formulario */
+form {
+    margin-bottom: 40px;
+    padding: 40px;
+    background-color: rgba(39, 142, 150, 0.9); /* Fondo con opacidad */
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2); /* Sombra */
+    position: relative; /* Para el spinner */
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input[type="text"], select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Spinner */
+.spinner {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px; /* Tamaño ajustado */
+    height: 50px; /* Tamaño ajustado */
+}
+
+/* Estilos de la lista de municipios */
+.municipio-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.municipio-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.municipio-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Estilos de la lista de grupos */
+#group-list {
+    margin-top: 20px;
+    background-color: rgb(207, 195, 195);
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+/* Estilos de la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Adaptaciones para pantallas más pequeñas */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    .estado-card {
+        font-size: 1rem;
+        padding: 15px;
+    }
+}
+
+.estado-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.estado-card {
+    background-color: #28a745; /* Color verde */
+    color: white;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.estado-card:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el cursor */
+}
+
+.estado-card:active {
+    background-color: #1e7e34; /* Verde aún más oscuro al hacer clic */
+}

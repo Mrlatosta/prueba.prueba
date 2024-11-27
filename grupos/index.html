@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selección de Países</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2b5876, #4e4376); /* Degradado azul/morado */
+            color: white;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+            min-height: 100vh; /* Para que cubra toda la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .country-button, .back-button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 20px 40px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+        }
+
+        .country-button img, .back-button img {
+            margin-right: 10px;
+            width: 24px;
+            height: 24px;
+        }
+
+        .country-button:hover, .back-button:hover {
+            background-color: #45a049;
+            transform: translateY(-5px);
+        }
+
+        .footer {
+            margin-top: 50px;
+            font-size: 0.9em;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+        }
+
+        .back-button-container {
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Bienvenido</h1>
+    <h2>Buscador de grupos Quintana Roo</h2>
+
+    <div class="button-container">
+       
+        <button class="country-button" onclick="window.location.href='quintanaroo.html'">
+            <img src="img/mexico.jpeg " alt="Mexico"> Mexico
+        </button>
+    </div>
+
+
+    <div class="footer">
+        <p>Plataforma para buscar enlaces de WhatsApp por regiones en diferentes países (Solo por ahora en México [Quintana ROO]).</p>
+        <p>&copy; 2024 </p>
+        <p>BY Valeria Soto - Raymundo Lara - Marco Perez </p>
+    </div>
+
+</body>
+</html>
