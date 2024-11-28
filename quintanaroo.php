@@ -1,9 +1,17 @@
 <?php
-// Configuración de la base de datos
-$servidor = "158.69.26.160";
-$usuario = "admin";
-$contrasena = "F@c3b00k";
-$BD = "whanum";
+require 'vendor/autoload.php'; // Asegúrate de que esta línea apunta correctamente a tu archivo autoload.php
+
+use Dotenv\Dotenv;
+
+// Cargar variables del archivo .env
+$dotenv = Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+// Configuración de la base de datos desde .env
+$servidor = $_ENV['DB_HOST'];
+$usuario = $_ENV['DB_USERNAME'];
+$contrasena = $_ENV['DB_PASSWORD'];
+$BD = $_ENV['DB_DATABASE'];
 
 try {
     // Conexión a la base de datos
